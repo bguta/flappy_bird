@@ -1,19 +1,26 @@
 
 Bird flappy;
 ArrayList<Pipe> pipe;
+char space = ' ';
+PImage bird;
 
+//use spacebar
+void keyPressed() {
+  if (key == space)
+    flappy.fly();
+}
 
-int numPipes = 4;
 void setup() {
   size(640, 960);
   flappy = new Bird();
   pipe = new ArrayList<Pipe>();
   pipe.add(new Pipe());
+  bird = loadImage("bird.png");
 }
 
 void draw() {
   background(255);
-  flappy.show();
+  flappy.show(bird);
   flappy.update();
 
   for (Pipe p : pipe) {
@@ -30,9 +37,4 @@ void draw() {
 
   if (frameCount % 200 == 0)
     pipe.add(new Pipe());
-}
-
-void keyPressed() {
-  if (key == ' ')
-    flappy.fly();
 }

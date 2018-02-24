@@ -6,8 +6,8 @@ class Bird {
   private float vel;
 
   //bird width and height
-  private Integer w = 15;
-  private Integer h = 10;
+  private float w = 150;
+  private float h = 150;
 
   //the location of the bird
   private float x;
@@ -19,9 +19,9 @@ class Bird {
     this.vel = 0;
   }
 
-  public void show() {
-    fill(0);
-    rect(this.x, this.y, w, h);
+  public void show(PImage b) {
+    image(b,this.x,this.y,w,h);
+    //rect(this.x, this.y, w, h);
   }     
 
   public void update() {
@@ -38,13 +38,13 @@ class Bird {
   }
 
   private void edge() {
-    if (y > height - h - 1) {
-      y = height - h;
+    if (y > height - h/2 - 30) {
+      y = height - h/2 -  30;
       this.vel = 0;
     }
 
-    if (y < h + 1) {
-      y = h;
+    if (y < 0) {
+      y = 0;
       this.vel = 1;
     }
   }

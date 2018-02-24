@@ -1,10 +1,9 @@
 class Pipe {
-  private float buffer = 5;
   private float topHead;
   private float bottomHead;
   private float size;
   private final float center;
-  private final float w = 50;
+  private final float w = 100;
   private float x = width - w;
   private float speed = 1.5;
 
@@ -40,8 +39,8 @@ class Pipe {
   }
 
   public boolean hit(Bird b) {
-    if (b.getX() + b.getW() >= x && b.getX() <= x + w)
-      if (b.getY()+ b.getH() > bottomHead || b.getY() < topHead)
+    if (b.getX() + b.getW() - 50>= x && b.getX() + 55     <= x + w)
+      if (b.getY()+ b.getH() - 50 > bottomHead || b.getY()+ 50 < topHead)
         return true;
     return false;
   }
