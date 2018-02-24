@@ -1,5 +1,5 @@
 class Pipe {
-
+  private float buffer = 5;
   private float topHead;
   private float bottomHead;
   private float size;
@@ -9,7 +9,7 @@ class Pipe {
   private float speed = 1.5;
 
   public Pipe() {
-    size = random(100, height/3);
+    size = random(200, height/3);
     center = random(size, height - size);
 
     topHead = center - size/2;
@@ -40,8 +40,8 @@ class Pipe {
   }
 
   public boolean hit(Bird b) {
-    if (b.getX() + b.getW() >= x && b.getX() - b.getW() <= x + w)
-      if (b.getY() + b.getH() > bottomHead || b.getY() - b.getH()< topHead)
+    if (b.getX() + b.getW() >= x && b.getX() <= x + w)
+      if (b.getY()+ b.getH() > bottomHead || b.getY() < topHead)
         return true;
     return false;
   }

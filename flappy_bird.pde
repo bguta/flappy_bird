@@ -1,6 +1,5 @@
 
 Bird flappy;
-Pipe[] pipe2;
 ArrayList<Pipe> pipe;
 
 
@@ -17,9 +16,6 @@ void draw() {
   flappy.show();
   flappy.update();
 
-  if (frameCount % 200 == 0)
-    pipe.add(new Pipe());
-
   for (Pipe p : pipe) {
     p.update();
     p.show();
@@ -31,6 +27,9 @@ void draw() {
     if (pipe.get(i).isGone())
       pipe.remove(i);
   }
+
+  if (frameCount % 200 == 0)
+    pipe.add(new Pipe());
 }
 
 void keyPressed() {

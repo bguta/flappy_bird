@@ -5,8 +5,8 @@ class Bird {
   private final float lift = 25;
   private float vel;
 
-
-  private Integer w = 10;
+  //bird width and height
+  private Integer w = 15;
   private Integer h = 10;
 
   //the location of the bird
