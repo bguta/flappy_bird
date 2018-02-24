@@ -6,8 +6,7 @@ class Pipe {
   private final float center;
   private final float w = 50;
   private float x = width - w;
-  private float speed = 1;
-  private float spacing = 150;
+  private float speed = 1.5;
 
   public Pipe() {
     size = random(100, height/3);
@@ -39,12 +38,11 @@ class Pipe {
       return true;
     return false;
   }
- 
- public boolean hit(Bird b){
-   
-   if(b.
-   
- }
- 
- 
+
+  public boolean hit(Bird b) {
+    if (b.getX() + b.getW() >= x && b.getX() - b.getW() <= x + w)
+      if (b.getY() + b.getH() > bottomHead || b.getY() - b.getH()< topHead)
+        return true;
+    return false;
+  }
 }
