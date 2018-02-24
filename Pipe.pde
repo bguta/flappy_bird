@@ -4,8 +4,9 @@ class Pipe {
   private float size;
   private final float center;
   private final float w = 100;
-  private float x = width - w;
+  private float x = width;
   private float speed = 1.5;
+  private boolean passed = false;
 
   public Pipe() {
     size = random(200, height/3);
@@ -42,6 +43,15 @@ class Pipe {
     if (b.getX() + b.getW() - 50>= x && b.getX() + 55     <= x + w)
       if (b.getY()+ b.getH() - 50 > bottomHead || b.getY()+ 50 < topHead)
         return true;
+    return false;
+  }
+
+  public boolean passed() {
+    if (x+w < width/4 + 80 && !passed){
+      passed = true;
+      return true;
+    }
+
     return false;
   }
 }

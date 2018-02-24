@@ -49,6 +49,9 @@ class Bird {
     }
   }
   
+  //getter methods
+  
+  
   public float getY(){
     return y;
   }
