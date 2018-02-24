@@ -1,25 +1,22 @@
 class Bird {
 
+  //movement
   private final float gravity = 1;
   private final float lift = 25;
-  private final float drag = 0.4;
+  private float vel;
+
 
   private Integer w = 10;
-  private Integer h = 100;
+  private Integer h = 10;
 
   //the location of the bird
   private float x;
   private float y;
 
-  //the speed and velocity
-  private float acc;
-  private float vel;
-
   public Bird() {
     this.x = width/4;
     this.y = height/2;
     this.vel = 0;
-    this.acc = 0;
   }
 
   public void show() {
@@ -28,7 +25,7 @@ class Bird {
   }     
 
   public void update() {
-    this.vel += gravity - drag;
+    this.vel += gravity;
     this.vel = 0.90*vel;
     if (vel > 30)
       vel = 30;
@@ -48,7 +45,12 @@ class Bird {
 
     if (y < h + 1) {
       y = h;
-      this.vel = 0;
+      this.vel = 1;
     }
   }
+  
+  public float getY(){
+    return y;
+  }
+    
 }
