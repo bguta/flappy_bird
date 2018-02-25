@@ -21,6 +21,8 @@ class Bird {
 
   public void show(PImage b) {
     image(b,this.x,this.y,w,h);
+    //line(this.x,this.y,this.x,this.y + 45);
+    //line(this.x,this.y,this.x + w, this.y);
     //rect(this.x, this.y, w, h);
   }     
 

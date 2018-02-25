@@ -1,8 +1,13 @@
+// created by Bereket Guta
+// Feb 23 2018
+
+
 Score score;
 Bird flappy;
 ArrayList<Pipe> pipe;
 char space = ' ';
 PImage bird;
+PImage bg;
 
 //use spacebar
 void keyPressed() {
@@ -11,16 +16,17 @@ void keyPressed() {
 }
 
 void setup() {
-  size(640, 960);
+  size(500, 887);
   flappy = new Bird();
   pipe = new ArrayList<Pipe>();
   pipe.add(new Pipe());
   bird = loadImage("bird.png");
+  bg = loadImage("background.jpg");
   score = new Score();
 }
 
 void draw() {
-  background(255);
+  background(bg);
   flappy.show(bird);
   flappy.update();
  
@@ -35,6 +41,7 @@ void draw() {
       score.update();
   }
   
+  
 
   for (int i = pipe.size() - 1; i > 0; i--)
     if (pipe.get(i).isGone())
@@ -42,4 +49,5 @@ void draw() {
   
   if (frameCount % 200 == 0)
     pipe.add(new Pipe());
+    
 }

@@ -17,15 +17,22 @@ class Pipe {
   }
 
   public void show() {
+    strokeWeight(10);
 
+    //top
     beginShape();
-    fill(0, 255, 0);
+    fill(0, 128, 0);
     rect(x, topHead, w, -topHead);
+    fill(0);
+    line(x, topHead - 50, x + w, topHead - 50);
     endShape();
-
+    
+    //bottom
     beginShape();
-    fill(0, 255, 0);
+    fill(0, 128, 0);
     rect(x, bottomHead, w, height - bottomHead);
+    fill(0);
+    line(x, bottomHead + 50, x + w, bottomHead + 50);
     endShape();
   }
 
@@ -40,14 +47,14 @@ class Pipe {
   }
 
   public boolean hit(Bird b) {
-    if (b.getX() + b.getW() - 50>= x && b.getX() + 55     <= x + w)
-      if (b.getY()+ b.getH() - 50 > bottomHead || b.getY()+ 50 < topHead)
+    if (b.getX() + b.getW() - 50 >= x && b.getX() + 50     <= x + w)
+      if (b.getY()+ b.getH() - 50 > bottomHead || b.getY()+ 45 < topHead)
         return true;
     return false;
   }
 
   public boolean passed() {
-    if (x+w < width/4 + 80 && !passed){
+    if (x+w < width/4 + 80 && !passed) {
       passed = true;
       return true;
     }

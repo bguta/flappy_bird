@@ -10,7 +10,7 @@ class Score{
   
   public void show(){
     textFont(num,100);
-    fill(0);
+    fill(255);
     text(str(score),width/2,height/3);
   }
   
