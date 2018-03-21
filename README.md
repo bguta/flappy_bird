@@ -1,7 +1,7 @@
 # flappy_bird
 a flappy bird remake using processing
 
-![preview](demo.png)
+![preview](demo.PNG)
 
 # Usage
 install processing from https://processing.org/download/ if you have not already done so.
